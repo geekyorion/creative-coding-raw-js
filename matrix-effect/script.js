@@ -83,7 +83,7 @@ const animate = () => {
     }
 }
 
-const startAnimation = (fps = 10) => {
+const startAnimation = (fps = 30) => {
     fpsInterval = 1000 / fps;
     startTime = performance.now();
     animate();
