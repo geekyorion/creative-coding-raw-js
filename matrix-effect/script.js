@@ -63,33 +63,15 @@ class Effect {
 
 const effect = new Effect(canvas.width, canvas.height);
 
-
-let fpsInterval = 0;
-let startTime = 0;
-let currentTime = 0;
-
-const animate = () => {
-    window.requestAnimationFrame(animate);
-
-    currentTime = performance.now();
-    const delta = currentTime - startTime;
-
-    if (delta > fpsInterval) {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, width, height)
-        ctx.font = `${effect.fontSize}px monospace`;
-        effect.symbols.forEach(symbol => symbol.draw(ctx));
-        startTime = performance.now();
-    }
+const animateThis = () => {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, width, height);
+    ctx.font = `${effect.fontSize}px monospace`;
+    effect.symbols.forEach(symbol => symbol.draw(ctx));
 }
 
-const startAnimation = (fps = 30) => {
-    fpsInterval = 1000 / fps;
-    startTime = performance.now();
-    animate();
-}
-
-startAnimation();
+const animate = new Animate(30);
+animate.startAnimation(animateThis);
 
 window.addEventListener('resize', () => {
     width = window.innerWidth;
