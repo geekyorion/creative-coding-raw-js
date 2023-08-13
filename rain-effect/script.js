@@ -5,7 +5,7 @@ image.src = imageBase64;
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 
-const numberOfParticles = 2000;
+const numberOfParticles = 3000;
 const particlesArray = [];
 const mappedImage = [];
 
