@@ -1,0 +1,82 @@
+body {
+    background: #000;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #555;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+canvas {
+    position: initial;
+}
+
+.text {
+    color: #555;
+    font-family: 'Freehand', cursive;
+    font-size: 30px;
+    text-align: center;
+}
+
+.text .highlight {
+    color: #aaa;
+    transition: color .5s;
+}
+
+.text:hover .highlight {
+    color: #fff;
+}
+
+.audio-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #0009;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .5s;
+}
+
+.audio-btn:hover {
+    background-color: #000f;
+}
+
+.audio-btn .play-btn,
+.audio-btn .pause-btn {
+    display: none;
+}
+
+.audio-btn.play .play-btn {
+    display: block;
+}
+
+.audio-btn.pause .pause-btn {
+    display: block;
+}
